@@ -1,0 +1,506 @@
+______________________________________________________________SECTION---A___________________________________________________________________
+
+
+
+
+Q1. Which attribute specifies the URL of an image? 
+Ans. src
+
+Q2. Which tag is used to create a list with bullet  points? 
+Ans. <ul>
+
+Q3. Which element represents a table header cell? 
+Ans. <thead>
+
+Q4.  Which element is normally inline? 
+Ans. <span>
+
+Q5.  What does the  target="_blank"  attribute do in  a link? 
+Ans. Opens in new browser context
+
+Q6.  Which element is used for a description list? 
+Ans. <dl>
+
+Q7.  Which element is most appropriate for a standalone  blog post? 
+Ans. <article>
+
+Q8.  Which entity represents an ampersand? 
+Ans. &amp; 
+
+Q9.  Which form method appends submitted form data  to the URL? 
+Ans. GET
+
+Q10.  Which element is used to embed another HTML document?
+Ans. <iframe>
+
+
+
+
+______________________________________________________________SECTION---A___________________________________________________________________
+
+
+
+
+Q11.  Explain the purpose of the following image attributes:
+ src
+  alt
+   width
+    height 
+Ans. The <img> tag in HTML uses attributes to specify the file location, accessibility text, and layout dimensions of an image.
+
+src (Source): Specifies the path or URL to the image file you want to display. It is required; without it, the browser does not know which image to load. It supports relative paths (e.g., src="images/cat.jpg") or absolute web URLs (e.g., src="[https://example.com/cat.jpg](https://example.com/cat.jpg)").
+
+alt (Alternative Text): Provides textual description of the image. It serves three main functions:
+
+Accessibility: Screen readers read this text aloud for visually impaired users.
+
+Fallback: Displays in the browser if the image file fails to load or is broken.
+
+SEO: Search engine crawlers index alt text to understand the content and context of the image.
+
+width & height (Dimensions): Define the intrinsic dimensions of the image in pixels (no px unit needed in HTML5, e.g., width="600" height="400").
+
+Specifying both helps the browser reserve the exact space needed before the image file downloads, preventing Cumulative Layout Shift (CLS) where page content abruptly jumps around during loading.
+
+
+Q12.  Explain  <a href="">  in HTML. 
+Ans. In HTML, the <a> tag defines a hyperlink, and the href attribute specifies the destination URL of that link. The a stands for anchor, and href stands for hypertext reference.
+
+HTML
+<a href="https://www.example.com">Visit Example</a>
+When a user clicks the text between the opening <a> and closing </a> tags, the browser navigates to whatever is inside href="".
+
+Common Ways href Is Used
+
+
+Q13. Explain  rowspan  and  colspan  with suitable examples. 
+Ans. In HTML tables, the rowspan and colspan attributes are used inside <td> (table data) or <th> (table header) tags to merge multiple cells into a single cell.1. colspan (Column Span)Definition: Merges two or more adjacent columns in the same row horizontally.Syntax: <td colspan="number"> (where number is how many columns to merge).Example:HTML<tableIn HTML tables, `colspan` and `rowspan` are attributes used inside `<td>` or `<th>` tags to merge adjacent cells horizontally or vertically.
+
+| Attribute | Meaning | Merging Direction | Effect |
+| :--- | :--- | :--- | :--- |
+| `colspan` | **Column Span** | Horizontal (left to right) | Makes a cell stretch across multiple columns within the same row. |
+| `rowspan` | **Row Span** | Vertical (top to bottom) | Makes a cell stretch across multiple rows within the same column. |
+
+---
+
+**1. `colspan` Example**
+
+Use `colspan` when a single heading or value needs to cover multiple columns.
+
+```html
+<table border="1">
+  <tr>
+    <!-- Spans across 2 columns -->
+    <th colspan="2">Full Name</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>Doe</td>
+    <td>Developer</td>
+  </tr>
+</table>
+Visual Result:Full Name (spans 2 columns)RoleJaneDoeBecause the header cell spans two columns, the first <tr> only needs 2 <th> tags, while the second <tr> defines all 3 individual <td> tags.2. rowspan ExampleUse rowspan when a category or value applies to multiple consecutive rows.HTML<table border="1">
+  <tr>
+    <th>Department</th>
+    <th>Employee</th>
+  </tr>
+  <tr>
+    <!-- Spans across 2 rows downwards -->
+    <td rowspan="2">Engineering</td>
+    <td>Alice</td>
+  </tr>
+  <tr>
+    <!-- Department cell is skipped here because Engineering covers it -->
+    <td>Bob</td>
+  </tr>
+</table>
+Visual Result:DepartmentEmployeeEngineering (spans 2 rows)AliceBobIn the second data row, only one <td> is written. If you add two, the row will overflow to the right because Engineering already occupies the first cell position.Key Rule to RememberWhen you use colspan="n" or rowspan="n", each cell merged absorbs n - 1 cells. You must omit those subsequent <td> elements in the HTML to prevent your table structure from breaking or shifting out of alignment.
+
+
+Q14. What are HTML entities? Why are they required?  Give any four examples. 
+Ans. HTML entities are special sequences of characters used to display reserved characters, invisible characters, or characters not readily available on a standard keyboard.
+
+They typically follow the structure: &entity_name; or &#entity_number;.
+
+Why Are HTML Entities Required?
+
+Prevent Parsing Conflicts (Reserved Characters): Certain characters like the less-than and greater-than signs are reserved by HTML to parse tags. If you type them directly into text, the browser may interpret them as tag syntax and break the page layout.
+
+Display Characters Not on Standard Keyboards: Symbols such as copyright (©), trademark (™), currency marks (₹, €, £), or accented letters can be consistently rendered across any browser using entity codes.
+
+Preserve Extra Whitespace: Browsers automatically collapse multiple regular spaces into a single space. Non-breaking space entities prevent this collapse.
+
+
+Q15.Explain the following attributes: HTML action method placeholder 
+Ans. 1. action Attribute
+
+Tag Used In: <form>
+
+Purpose: Specifies the destination URL or server-side script (e.g., PHP, Node.js, Python file) where form data is sent for processing after submission.
+
+Default Behavior: If omitted, the form submits to the current page.
+
+Example:
+
+HTML
+<form action="/submit-data.php">
+2. method Attribute
+
+Tag Used In: <form>
+
+Purpose: Defines the HTTP method used to transfer the form data to the server.
+
+Common Values:
+
+GET (Default): Appends form data to the URL as query parameters (?key=value). Best for non-sensitive data, search bars, and bookmarkable requests.
+
+POST: Sends form data inside the HTTP request body. It does not expose data in the URL, making it secure for sensitive information (passwords, payment details) and large files.
+
+Example:
+
+HTML
+<form action="/login" method="POST">
+3. placeholder Attribute
+
+Tag Used In: <input> (text, email, password, search, etc.) and <textarea>
+
+Purpose: Displays a temporary, light-colored hint or short instruction inside an input field describing the expected format or value.
+
+Behavior: Disappears automatically as soon as the user starts typing. It is not submitted as part of the form data.
+
+Example:
+
+HTML
+<input type="email" placeholder="name@example.com">
+
+
+
+
+______________________________________________________________SECTION---C___________________________________________________________________
+
+
+
+
+Q16. Student Registration Form – 8 Marks Create an HTML student registration form containing: 
+●  Full Name 
+●  Email 
+●  Password 
+●  Date of Birth
+●  Gender using radio buttons 
+●  Course using a dropdown 
+●  Skills using checkboxes 
+●  Address using  <textarea> 
+●  Submit and Reset buttons Use appropriate  <label>  elements.
+Ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+
+  <form action="/submit-registration" method="POST">
+
+    <!-- 1. Full Name -->
+    <div>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" placeholder="e.g. John Doe" required>
+    </div>
+    <br>
+
+    <!-- 2. Email -->
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="name@example.com" required>
+    </div>
+    <br>
+
+    <!-- 3. Password -->
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter secure password" required>
+    </div>
+    <br>
+
+    <!-- 4. Date of Birth -->
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <br>
+
+    <!-- 5. Gender (Radio Buttons) -->
+    <div>
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </div>
+    <br>
+
+    <!-- 6. Course (Dropdown / Select) -->
+    <div>
+      <label for="course">Select Course:</label>
+      <select id="course" name="course" required>
+        <option value="">-- Choose a Course --</option>
+        <option value="btech">B.Tech / B.E.</option>
+        <option value="bca">BCA</option>
+        <option value="bsc_cs">B.Sc Computer Science</option>
+        <option value="mca">MCA</option>
+      </select>
+    </div>
+    <br>
+
+    <!-- 7. Skills (Checkboxes) -->
+    <div>
+      <label>Skills:</label>
+      <input type="checkbox" id="html" name="skills" value="html">
+      <label for="html">HTML</label>
+
+      <input type="checkbox" id="css" name="skills" value="css">
+      <label for="css">CSS</label>
+
+      <input type="checkbox" id="js" name="skills" value="javascript">
+      <label for="js">JavaScript</label>
+
+      <input type="checkbox" id="python" name="skills" value="python">
+      <label for="python">Python</label>
+    </div>
+    <br>
+
+    <!-- 8. Address (<textarea>) -->
+    <div>
+      <label for="address">Residential Address:</label><br>
+      <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter complete address"></textarea>
+    </div>
+    <br>
+
+    <!-- 9. Submit and Reset Buttons -->
+    <div>
+      <input type="submit" value="Submit Registration">
+      <input type="reset" value="Reset Form">
+    </div>
+
+  </form>
+
+</body>
+</html>
+
+
+Q17. Table with Rowspan and Colspan – 6 Marks Create the following table: Day  Monday  Tuesday  Wednesda y Requirements: Morning  Afternoon HTML  JavaScript  HTML  CSS React JavaScri pt 
+●  Use  <th>  for headings. 
+●  Use Border to make border visible. 
+●  Add a caption to the table. 
+Ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Schedule Table</title>
+</head>
+<body>
+
+  <table border="1" cellpadding="8" cellspacing="0">
+    <!-- Caption as required -->
+    <caption>Weekly Class Timetable</caption>
+
+    <thead>
+      <!-- Header Row: Days -->
+      <tr>
+        <th>Day</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Morning Row: Uses colspan="2" for HTML on Mon & Tue -->
+      <tr>
+        <th>Morning</th>
+        <td colspan="2" align="center">HTML</td>
+        <td align="center">React</td>
+      </tr>
+
+      <!-- Afternoon Row -->
+      <tr>
+        <th>Afternoon</th>
+        <td align="center">JavaScript</td>
+        <td align="center">CSS</td>
+        <td align="center">JavaScript</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
+
+
+Q18. Iframe and Linking – 5 Marks Create a webpage that: 
+●  Contains a heading  "Useful Resources" 
+●  Contains three hyperlinks. 
+●  Opens one link in a new tab. 
+●  Embeds another webpage using an iframe. 
+●  Sets the iframe width and height. 
+Ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Useful Resources</title>
+</head>
+<body>
+
+  <!-- Heading -->
+  <h1>Useful Resources</h1>
+
+  <!-- Hyperlinks Section -->
+  <h3>External Links</h3>
+  <ul>
+    <!-- Link 1: Opens in a new tab using target="_blank" -->
+    <li>
+      <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">
+        MDN Web Docs (Opens in new tab)
+      </a>
+    </li>
+
+    <!-- Link 2: Standard link opening in the same tab -->
+    <li>
+      <a href="https://www.w3schools.com">W3Schools Online Tutorials</a>
+    </li>
+
+    <!-- Link 3: Another standard hyperlink -->
+    <li>
+      <a```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+Q19. Inline, Block and Formatting – 3 Marks Create an HTML page demonstrating at least: 
+●  Two block-level elements. 
+●  Three inline elements. 
+●  Three text-formatting elements. Add comments indicating which elements are block-level and which are inline    
+Ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Block, Inline, and Formatting Elements</title>
+</head>
+<body>
+
+  <!-- ==========================================
+       BLOCK-LEVEL ELEMENTS
+       1. <div> - starts on a new line and takes full width
+       2. <p>   - paragraph block element
+       ========================================== -->
+
+  <!-- Block Element 1: <div> -->
+  <div>
+    <h2>Block vs Inline Demonstration</h2>
+
+    <!-- Block Element 2: <p> -->
+    <p>
+      This is a paragraph, which is a block-level element. Inside this block, 
+      we can place various inline and text-formatting elements.
+    </p>
+  </div>
+
+
+  <!-- ==========================================
+       INLINE & TEXT-FORMATTING ELEMENTS
+       
+       Three Inline Elements:
+       1. <span> - generic inline container
+       2. <a>    - hyperlink element
+       3. <img>  - inline image element
+
+       Three Text-Formatting Elements:
+       1. <b> or <strong> - bold text
+       2. <i> or <em>     - italicized text
+       3. <mark>          - highlighted text
+       ========================================== -->
+
+  <p>
+    <!-- Inline Element 1: <span> -->
+    <!-- Formatting Element 1: <strong> (Bold) -->
+    <span>Here is some <strong>important bold text</strong> inside a span.</span>
+
+    <!-- Formatting Element 2: <em> (Italics) -->
+    <em>This text is italicized for emphasis.</em>
+
+    <!-- Formatting Element 3: <mark> (Highlighted) -->
+    We can also <mark>highlight key concepts</mark> easily.
+
+    <!-- Inline Element 2: <a> (Hyperlink) -->
+    Visit our <a href="https://example.com">documentation link</a> for more details.
+
+    <!-- Inline Element 3: <img> (Image) -->
+    <img src="https://via.placeholder.com/20" alt="icon">
+  </p>
+
+</body>
+</html>
+
+
+Q20. Semantic Elements – 3 Marks Create a webpage using the following semantic structure: None Header Navigation Main Section Article Aside Footer Use the appropriate HTML5 semantic elements. 
+Ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML5 Webpage</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Website Title</h1>
+    <p>A brief site tagline or introductory text</p>
+  </header>
+
+  <!-- Navigation Section -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main>
+
+    <!-- Thematic Section -->
+    <section>
+      <h2>Primary Topic</h2>
+      <p>This section groups related content within the main area.</p>
+
+      <!-- Self-Contained Article -->
+      <article>
+        <h3>Article Headline</h3>
+        <p>This is a standalone piece of content, such as a blog post or news story.</p>
+      </article>
+    </section>
+
+    <!-- Sidebar / Tangential Content -->
+    <aside>
+      <h3>Related Links</h3>
+      <p>Extra resources, related articles, or author bio details.</p>
+    </aside>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2026 Semantic Web Design. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
