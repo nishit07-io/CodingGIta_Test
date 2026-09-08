@@ -1,2 +1,2 @@
 # CodingGIta_Test
-CodingGita Assignments solution
+CodingGita Test solution
